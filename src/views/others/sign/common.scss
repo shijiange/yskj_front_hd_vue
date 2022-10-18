@@ -1,0 +1,87 @@
+#signLunch {
+  .page {
+    background: #f9fbfc;
+    min-height: 100vh;
+  }
+
+  .container {
+    position: relative;
+    width: 21.563rem;
+    padding: 0.65rem 0.56rem 0.906rem;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 0.469rem;
+
+    .container-title {
+      position: relative;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      padding-left: 0.469rem;
+      font-size: 0.813rem;
+      color: #198bfb;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        content: " ";
+        display: block;
+        width: 0.125rem;
+        height: 0.7rem;
+        background: #198bfb;
+      }
+    }
+  }
+
+  .templateInfo {
+    .templateInfo-item {
+      height: 4rem;
+      padding-top: 0.9rem;
+      border-bottom: 0.051rem solid #f6f6f6;
+
+      .desc {
+        display: flex;
+        align-items: center;
+
+        .icon-fontclass-xinghao {
+          color: #f64747;
+          font-size: 0.75rem;
+        }
+
+        span {
+          margin-left: 0.3rem;
+          font-size: 0.813rem;
+          color: #171717;
+        }
+      }
+
+      .input {
+        display: flex;
+        align-items: center;
+        padding-top: 0.3rem;
+        padding-left: 0.3rem;
+
+        input,
+        span {
+          text-align: left;
+          flex: 1;
+          border: none;
+          font-size: 0.938rem;
+        }
+      }
+    }
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+  }
+
+  .button:active {
+    filter: brightness(0.8);
+  }
+}

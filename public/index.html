@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover"
+    />
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /> -->
+    <!-- <meta name="referrer" content="no-referrer" />  不启用有图片源的问题   启用了有百度统计的问题-->
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_432132_i588lvchlrb.css" />
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900">-->
+    <link rel="shortcut icon" href="./static/app/images/logo.jpg" type="image/x-icon" />
+    <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.css) { %>
+    <!--<link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="preload" as="style" />-->
+    <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="stylesheet" />
+    <% } %>
+    <!-- 前端图标 -->
+    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/element-ui/1.1.6/theme-default/index.css">-->
+    <!--<link rel="stylesheet" href="./static/app/loader-smartphone.css" />-->
+    <!--<link rel="stylesheet" href="./static/app/mint-ui.css" />-->
+    <!--<link rel="stylesheet" href="./static/app/vant.css" />-->
+    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/vant@2.2/lib/index.css" /> -->
+    <!--<link rel="stylesheet" href="./static/app/ydui.px.css" />-->
+    <!--<link rel="stylesheet" href="./static/app/swiper.min.css" />-->
+    <title></title>
+    <script type = "text/javascript">
+  (function() {
+    if (window.zhuge) return;
+    window.zhuge = [];
+    window.zhuge.methods = "_init identify track trackRevenue getDid getSid getKey setSuperProperty setUserProperties setWxProperties setPlatform".split(" ");
+    window.zhuge.factory = function(b) {
+      return function() {
+        var a = Array.prototype.slice.call(arguments);
+        a.unshift(b);
+        window.zhuge.push(a);
+        return window.zhuge;
+      }
+    };
+    for (var i = 0; i < window.zhuge.methods.length; i++) {
+      var key = window.zhuge.methods[i];
+      window.zhuge[key] = window.zhuge.factory(key);
+    }
+    window.zhuge.load = function(b, x) {
+      if (!document.getElementById("zhuge-js")) {
+        var a = document.createElement("script");
+        var verDate = new Date();
+        var verStr = verDate.getFullYear().toString() + verDate.getMonth().toString() + verDate.getDate().toString();
+
+        a.type = "text/javascript";
+        a.id = "zhuge-js";
+        a.async = !0;
+        a.src = 'https://tjfx.iyeecare.com/zhuge.js?v=' + verStr;
+        a.onerror = function() {
+          window.zhuge.identify = window.zhuge.track = function(ename, props, callback) {
+            if(callback && Object.prototype.toString.call(callback) === '[object Function]') {
+              callback();
+            } else if (Object.prototype.toString.call(props) === '[object Function]') {
+              props();
+            }
+          };
+        };
+        var c = document.getElementsByTagName("script")[0];
+        c.parentNode.insertBefore(a, c);
+        window.zhuge._init(b, x)
+      }
+    };
+    window.zhuge.load('4847f78d673e488e98da60b0f7fa1ab2', { //配置应用的AppKey
+      superProperty: { //全局的事件属性(选填)
+        '应用名称': '云平台'
+      },
+      adTrack: false,//广告监测开关，默认为false
+      zgsee: false,//视屏采集开关， 默认为false
+      autoTrack: true,
+      //启用全埋点采集（选填，默认false）
+      singlePage: false, //是否是单页面应用（SPA），启用autoTrack后生效（选填，默认false）
+      debug:false
+    });
+  })();
+</script>
+    <script type="text/javascript">
+      //引入地图 JSAPI 脚本之前增加设置 JSAPI 安全密钥的脚本标签，并将您的安全密钥「您申请的安全密钥」替换为您的安全密钥；（注意这个设置必须是在  JSAPI 的脚本加载之前进行设置，否则设置无效。）
+      window._AMapSecurityConfig = {
+          securityJsCode:'dd08f7a2af1a3349a7c16687eeb628b8'
+      }
+    </script>      
+
+    <!-- 以750px为基准设计尺寸自动适配 -->
+    <script type="text/javascript">
+      (function(doc, win) {
+        var isAndroid = win.navigator.appVersion.match(/android/gi)
+        var isIPhone = win.navigator.appVersion.match(/iphone/gi)
+
+        var scale = 1.0;
+        // var ratio = 1
+        // if(isIPhone) {
+        //   if (window.devicePixelRatio == 2) {
+        //     scale *= 0.5;
+        //     ratio *= 2;
+        //   }
+        //   if (window.devicePixelRatio == 3) {
+        //     scale *= (1/3);
+        //     ratio *= 3;
+        //   }
+        // }
+        if (
+          !navigator.userAgent.match(
+            /(phone|pad|pod|iPhone|iPod|ios|iPad|android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+          )
+        ) {
+          var httpEquiv = '<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />'
+          document.write(httpEquiv)
+        }
+
+        var text = '<meta name="viewport" content="initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', width=device-width,' + ' user-scalable=no" />';
+        document.write(text)
+
+        var docEl = doc.documentElement
+        var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize'
+        var recalc = function() {
+          var clientWidth
+          if (!isAndroid && !isIPhone) {
+            clientWidth = 375
+          } else {
+            clientWidth = docEl.clientWidth
+          }
+          // isAndroid && clientWidth>800 为了防止企业微信跳转微信的时候出现clientWidth=1080 字体过大
+          if (!clientWidth || (isAndroid && clientWidth>800)) return
+          docEl.style.fontSize = 16 * (clientWidth / 375) + 'px'
+
+          // 解决部分rem特别大的问题
+          var docElFontSize = docEl.style.fontSize.replace(/px/gi, '')
+          var computedFontSize = win.getComputedStyle(docEl)['font-size'].replace(/px/gi, '')
+
+          console.log("docElFontSize",docElFontSize,computedFontSize)
+          //老人机字体过大
+          // docElFontSize != computedFontSize && (docEl.style.fontSize = (docElFontSize * docElFontSize) / computedFontSize + 'px')
+        }
+        if (!doc.addEventListener) return
+        recalc()
+        win.addEventListener(resizeEvt, recalc, false)
+        // doc.addEventListener("DOMContentLoaded", recalc, false);
+      })(document, window)
+    </script>
+    <!-- 使用CDN加速的JS文件，配置在vue.config.js下 -->
+    <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.js) { %>
+    <script src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
+    <% } %>
+
+    <!-- <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script> -->
+    <!-- <script src="https://open.work.weixin.qq.com/wwopen/js/jwxwork-1.0.0.js"></script> -->
+    <!-- built files will be auto injected -->
+    <!--<script type="text/javascript" src="./static/app/TcPlayer-2.3.2.js" charset="utf-8"></script>-->
+    <!--<script src="https://player.polyv.net/livesdk/polyv-live.min.js"></script>-->
+    <!--<script src="//unpkg.com/vr-panorama@latest/dist/VrTraveller.js"></script>-->
+    <!--<script type="text/javascript" src="./static/app/app-min.js"></script>-->
+    <!--<script src="static/app/hammer.min.js"></script>-->
+    <!--<script src="./static/app/recorder-core.js"></script>-->
+    <!--<script src="./static/gov_province_city_area_id.js"></script>-->
+    <!--<script type="text/javascript" src="./static/app/beta-amr.js"></script>-->
+    <!--<script type="text/javascript" src="./static/app/swiper.min.js"></script>-->
+
+    <!--<script type="text/javascript" src="./static/app/vue.min.js"></script>-->
+    <!--<script type="text/javascript" src="./static/app/vue-awesome-swiper.js"></script>-->
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>-->
+    <!--<script type="text/javascript">-->
+    <!--if (!window.Vue) {-->
+    <!--document.write('<script src="./static/app/vue.min.js"><\/script>');-->
+    <!--}-->
+    <!--</script>-->
+    <!--<script type="text/javascript" src="./static/app/vue-router1.min.js"></script>-->
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/vue-router/2.5.0/vue-router.min.js"></script>-->
+    <!--<script type="text/javascript">-->
+    <!--if (!window.VueRouter) {-->
+    <!--document.write(-->
+    <!--'<script src="./static/app/vue-router.min.js"><\/script>'-->
+    <!--);-->
+    <!--}-->
+    <!--</script>-->
+    <!--<script type="text/javascript" src="./static/app/vuex.min.js"></script>-->
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/vuex/2.2.1/vuex.min.js"></script>-->
+    <!--<script type="text/javascript">-->
+    <!--if (!window.Vuex) {-->
+    <!--document.write('<script src="./static/app/vuex.min.js"><\/script>');-->
+    <!--}-->
+    <!--</script>-->
+    <!--<script type="text/javascript" src="./static/app/axios.min.js"></script>-->
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>-->
+    <!--<script type="text/javascript">-->
+    <!--if (!window.axios) {-->
+    <!--document.write('<script src="./static/app/axios.min.js"><\/script>');-->
+    <!--}-->
+    <!--</script>-->
+    <!--<script type="text/javascript" src="./static/app/vant.js"></script>-->
+    <!--<script src="//cdn.jsdelivr.net/npm/vant@1.4/lib/vant.min.js"></script>-->
+    <!--<script type="text/javascript">-->
+    <!--if (!window.vant) {-->
+    <!--document.write('<script src="./static/app/vant.js"><\/script>');-->
+    <!--}-->
+    <!--</script>-->
+    <!--<script type="text/javascript" src="./static/app/ydui.px.js"></script>-->
+
+    <!--<script type="text/javascript" src="./static/app/mint-ui.js"></script>-->
+    <!--<script src="//cdn.staticfile.org/mint-ui/2.2.13/index.js"></script>-->
+    <!--<script type="text/javascript">-->
+    <!--if (!window.MINT) {-->
+    <!--document.write('<script src="./static/app/mint-ui.js"><\/script>');-->
+    <!--}-->
+    <!--</script>-->
+
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/element-ui/1.1.6/index.js"></script>-->
+    <!--<script type="text/javascript" src="./static/app/vue-lazyload.js"></script>-->
+    <!--<script src="//cdn.staticfile.org/vue-lazyload/1.2.6/vue-lazyload.js"></script>-->
+
+    <!--<script-->
+    <!--type="text/javascript"-->
+    <!--src="https://webapi.amap.com/maps?v=1.4.9&key=43de56d8e65fe042493541213d9ad7b0"-->
+    <!--&gt;</script>-->
+    <!--<script-->
+    <!--type="text/javascript"-->
+    <!--src="https://webapi.amap.com/maps?v=1.4.9&key=43de56d8e65fe042493541213d9ad7b0&plugin=AMap.Autocomplete"-->
+    <!--&gt;</script>-->
+
+    <!-- <script type="text/javascript" src="./static/app/YdbOnline.js"></script> -->
+    <script type="text/javascript">
+      function embedJweixinSDK () {
+        var jsName = "";
+        var scriptNode = document.createElement("script");
+        scriptNode.setAttribute("type", "text/javascript");
+        if (
+          (navigator.userAgent.toLowerCase().match(/wxwork/i) == 'wxwork')
+          &&
+          !(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))
+        ) {
+          // 企业微信PC端
+          jsName = "jweixin-1.2.0.js";
+          scriptNode.setAttribute("src", "https://res.wx.qq.com/open/js/jweixin-1.2.0.js");
+        } else if ( (navigator.userAgent.toLowerCase().match(/wxwork/i) == 'wxwork')
+          && navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+        ){
+          // 企业微信手机端
+          jsName = "jweixin-1.5.0.js";
+          scriptNode.setAttribute("src", "https://res.wx.qq.com/open/js/jweixin-1.5.0.js");
+        }else {
+          jsName = "jweixin-1.6.0.js";
+          scriptNode.setAttribute("src", "https://res.wx.qq.com/open/js/jweixin-1.6.0.js");
+        }
+        document.head.appendChild(scriptNode);
+        scriptNode.onload = function() {
+          var wxworkNode = document.createElement("script");
+          wxworkNode.setAttribute("type", "text/javascript");
+          wxworkNode.setAttribute("src", "https://open.work.weixin.qq.com/wwopen/js/jwxwork-1.0.0.js");
+          document.head.appendChild(wxworkNode);
+        }
+      }
+      embedJweixinSDK();
+    </script>
+    <script>
+      function clearLoginData() {
+        // 清理scope/appid等登录数据
+        window.localStorage.removeItem("uid");
+        window.localStorage.removeItem("mid");
+        window.localStorage.removeItem("client");
+
+        window.localStorage.removeItem("scope");
+        window.localStorage.removeItem("appid");
+        window.localStorage.removeItem("mob_parent");
+        window.localStorage.removeItem("mob_user");
+        window.localStorage.removeItem("timetamp");
+        window.localStorage.removeItem("sign");
+        window.localStorage.removeItem('getKeyIIOS');
+      }
+
+      // window.onload = function() { onload有延迟
+        if (!window.sessionStorage["tempFlag"]) {
+          clearLoginData();
+          window.sessionStorage.removeItem("myLocation");
+        } else {
+          window.sessionStorage.removeItem("tempFlag");
+        }
+      // };
+
+      var YDB_UUID = 0
+      var senduid = function(uuid) {
+        YDB_UUID = uuid
+        if (!YDB_UUID) {
+          YDB_UUID = 0
+        }
+        window.localStorage.setItem('uuid', YDB_UUID)
+      };
+
+      // 开启下拉刷新功能
+      if(YDB) {
+        YDB.SetDragRefresh(1);
+      }
+    </script>
+    <!--<script-->
+    <!--src="//static.ydbimg.com/API/YdbOnline.js"-->
+    <!--type="text/javascript"-->
+    <!--&gt;</script>-->
+    <!--<script type="text/javascript">-->
+    <!--if (!window.YDBOBJ) {-->
+    <!--document.write('<script src="./static/app/YdbOnline.js"><\/script>');-->
+    <!--}-->
+    <!--</script>-->
+    <!--<script type="text/javascript" src="./static/app/apps.js"></script>-->
+    <!-- <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js" type="text/javascript" charset="utf-8"></script> -->
+
+    <!--<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=B3475112871cafd7401aa6395bde02f1"></script>-->
+    <!--<script type="text/javascript" src="./static/app/fixifmheight.js" charset="utf-8"></script>-->
+    <!--<script-->
+    <!--type="text/javascript"-->
+    <!--src="//imgcache.qq.com/open/qcloud/video/h5/fixifmheight.js"-->
+    <!--charset="utf-8"-->
+    <!--&gt;</script>-->
+    <!--<script src="./static/app/jweixin-1.3.2.js" type="text/javascript" charset="utf-8"></script>-->
+    <!--<script src="static/app/core.js"></script>-->
+    <!--<script src="static/app/enc-base64.js"></script>-->
+    <!--<script src="static/app/cipher-core.js"></script>-->
+    <!--<script src="static/app/aes.js"></script>-->
+    <!--<script src="static/app/md5.js"></script>-->
+  </head>
+
+  <body>
+    <div id="app"></div>
+  </body>
+</html>

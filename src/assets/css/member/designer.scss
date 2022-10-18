@@ -1,0 +1,224 @@
+#member-all {
+  .badge-hotel {
+    position: absolute;
+    left: 56%;
+    top: 0.125rem;
+    background-color: #fff;
+    border: solid 1px #f15353;
+    border-radius: 0.625rem;
+    color: #f15353;
+    line-height: 0.875rem;
+    font-size: 12px;
+    padding: 0 0.3125rem;
+  }
+
+  #templet_box {
+    margin-top: 0.625rem;
+
+    h3 {
+      color: #333;
+      text-align: left;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .extension_plate {
+      margin-bottom: 0.625rem;
+      //background: #fff;
+      .imgurl {
+        width: 2.25rem !important;
+        height: 2.25rem;
+        line-height: 2.25rem;
+        margin-top: -0.5rem !important;
+        margin-bottom: 0.25rem !important;
+      }
+
+      h1 {
+        font-size: 16px;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        text-align: left;
+        padding: 0 0.875rem;
+        display: flex;
+
+        .spare {
+          width: 0.25rem;
+          height: 1rem;
+          border-radius: 0.0625rem;
+          background-color: #f15353;
+          margin-top: 0.75rem;
+          margin-right: 0.375rem;
+        }
+      }
+
+      .box {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0.625rem 0;
+
+        li {
+          width: 25%;
+          margin-bottom: 0.625rem;
+
+          img {
+            width: 1.75rem;
+            margin: 0 auto;
+            display: block;
+          }
+
+          span {
+            font-size: 12px;
+            line-height: 1.875rem;
+            display: block;
+            color: #666;
+          }
+        }
+      }
+    }
+  }
+
+  #tool {
+    background-color: #fff;
+    overflow: hidden;
+    color: #333;
+    margin-bottom: 10px;
+    //.iconfont{
+    //  font-size: 1.625rem;
+    //  color: rgb(241, 83, 83);
+    //}
+    .title {
+      display: flex;
+      height: 2.5rem;
+      line-height: 2.5rem;
+      padding: 0 0.875rem;
+    }
+
+    .spare {
+      width: 0.25rem;
+      height: 1rem;
+      border-radius: 0.0625rem;
+      background-color: #f15353;
+      margin-top: 0.75rem;
+      margin-right: 0.375rem;
+    }
+
+    #template {
+      display: flex;
+      height: 0;
+      line-height: 24px;
+      padding: 0;
+
+      .spare {
+        width: 0.25rem;
+        height: 1rem;
+        border-radius: 0.0625rem;
+        background-color: #f15353;
+        margin-top: 0.25rem;
+        margin-right: 0.375rem;
+      }
+    }
+
+    h3 {
+      color: #333;
+      text-align: left;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    li img {
+      width: 2.5rem;
+      display: block;
+    }
+
+    .imgurl {
+      width: 2.25rem;
+      height: 2.25rem;
+      line-height: 2.25rem;
+      margin-bottom: 0.45rem;
+    }
+
+    ul li {
+      -webkit-box-flex: 1;
+      width: 25%;
+      position: relative;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 12px;
+      margin-bottom: 0.625rem;
+
+      .span {
+        line-height: 1.875rem;
+      }
+    }
+
+    ul li i {
+      display: inline-block;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    .tool-box {
+      display: -webkit-box;
+      display: -webkit-flex;
+      padding: 0.625rem 0;
+    }
+  }
+
+  .cart {
+    height: auto;
+    width: 100%;
+    margin-bottom: 0.625rem;
+    padding-left: 1.25rem;
+    //background-color: #fff;
+    .title {
+      display: flex;
+      height: 2.5rem;
+      line-height: 2.5rem;
+    }
+
+    .spare {
+      width: 0.25rem;
+      height: 1rem;
+      border-radius: 0.0625rem;
+      background-color: #f15353;
+      margin-top: 0.75rem;
+      margin-right: 0.375rem;
+    }
+
+    h3 {
+      color: #333;
+      text-align: left;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .list1 {
+      height: 2.75rem;
+      width: 100%;
+      padding: 0 0.875rem 0 0;
+      font-size: 16px;
+      line-height: 2.75rem;
+      color: #333;
+      text-align: left;
+      //border-bottom: solid 0.0625rem #ebebeb;
+      display: flex;
+    }
+
+    .list1 i.fa.fa-angle-right {
+      float: right;
+      line-height: 2.75rem;
+      display: inline-block;
+      font-size: 1.5rem;
+      color: #c9c9c9;
+      text-align: center;
+      background-size: 1.25rem;
+      position: absolute;
+      right: 0.875rem;
+    }
+  }
+}

@@ -1,0 +1,229 @@
+.coupon_box {
+  background: #fff;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 5rem;
+}
+
+.navTabr {
+  box-sizing: border-box;
+  outline: none;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.navTabr ul {
+  overflow-x: scroll;
+  white-space: nowrap;
+  display: flex;
+  text-align: center;
+  margin: 0 0.78rem;
+  padding: 1rem 0;
+}
+
+.navTabr li {
+  flex: 1;
+  border: 0;
+  margin-right: 0.69rem;
+  box-sizing: border-box;
+  background-color: #eeecec;
+  border-radius: 13px;
+  padding: 5px 10px;
+}
+
+.shopCouponNew {
+  width: 21.66rem;
+  height: 6.75rem;
+  display: flex;
+}
+
+.shopCoupon {
+  margin: 0 0.91rem 0 0.88rem;
+  width: 21.66rem;
+  box-shadow: 0.03rem 0.12rem 0.44rem -0.29rem rgba(81, 81, 81, 0.52);
+  position: relative;
+  margin-bottom: 1rem;
+
+  .left {
+    flex: 1;
+    height: 6.75rem;
+    position: relative;
+
+    .postLeft {
+      position: absolute;
+      right: -4px;
+      top: 0;
+      width: 8.28rem;
+      height: 6.81rem;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      // background-image: url('https://mini-app-img-1251768088.cos.ap-guangzhou.myqcloud.com/couponsbg_1.png');
+      .line {
+        width: 6.375rem;
+        border: dashed 0.043rem #f5f5f5;
+        margin-left: 0.6rem;
+      }
+
+      .Chapter_number {
+        font-size: 0.6rem;
+        color: #fff;
+        position: absolute;
+        top: 0.36rem;
+        left: 0.6rem;
+        width: 2rem;
+        text-align: center;
+      }
+
+      .textOne {
+        font-size: 1.63rem;
+        color: #fff;
+        margin-top: 0.8rem;
+        // margin-left: 0.6rem;
+        margin-bottom: 0.6rem;
+        word-break: break-all;
+      }
+
+      .textTwo {
+        font-size: 0.69rem;
+        line-height: 0.84rem;
+        color: #fff;
+        margin-top: 0.72rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .tapBox {
+        width: 4.66rem;
+        height: 1.34rem;
+        background-color: #fff;
+        border-radius: 0.43rem;
+        line-height: 1.44rem;
+
+        span {
+          color: #fba560;
+          font-size: 0.79rem;
+          letter-spacing: 0.08rem;
+        }
+      }
+    }
+  }
+
+  .right {
+    width: 13.94rem;
+    height: 6.75rem;
+    padding: 0 0.69rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+
+    .dueBox {
+      font-size: 0.68rem;
+      width: 5rem;
+      height: 1.2rem;
+      position: absolute;
+      right: -21px;
+      top: 12px;
+      transform: rotate(45deg);
+      background: #42a354;
+      color: #fff;
+      letter-spacing: 0.1rem;
+      line-height: 1.2rem;
+      text-align: center;
+    }
+
+    .isdueBox {
+      font-size: 0.91rem;
+      width: 6rem;
+      height: 1.8rem;
+      position: absolute;
+      right: -29px;
+      top: 7px;
+      transform: rotate(45deg);
+      background: #cecece;
+      color: #000;
+      letter-spacing: 0.1rem;
+      line-height: 1.8rem;
+      text-align: center;
+    }
+
+    .right_top {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding-top: 0.56rem;
+
+      .right_top_text {
+        display: flex;
+        align-items: center;
+
+        div {
+          // background-color: #fbbd5c;
+          border-radius: 0.22rem;
+          // width: 3.69rem;
+          height: 1.25rem;
+          margin-right: 0.53rem;
+          font-size: 0.71rem;
+          color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0 0.5rem;
+        }
+
+        span {
+          font-size: 0.816rem;
+          color: #f15a5a;
+          border: solid 0.094rem #ff5d5d;
+          border-radius: 0.313rem;
+          height: 1.25rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 0.5rem;
+        }
+      }
+    }
+
+    .right_top_bottom_text {
+      margin-top: 0.625rem;
+      margin-bottom: 0.6rem;
+      text-align: left;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+
+    .right_bottom {
+      text-align: left;
+      color: #9c9c9c;
+      font-size: 0.6rem;
+    }
+  }
+
+  .coupon_voucher_btm {
+    display: none;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0.5rem 0.625rem;
+    background-color: #f2f2f7;
+    border-radius: 0.1875rem;
+
+    .coupon_voucher_explain {
+      color: #999;
+      font-size: 12px;
+      text-align: left;
+    }
+  }
+
+  .coupon_voucher_btm.hies {
+    display: block;
+  }
+}
+
+.image1 {
+  background-image: url("https://mini-app-img-1251768088.cos.ap-guangzhou.myqcloud.com/couponsbg_1.png");
+}

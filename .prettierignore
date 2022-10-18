@@ -1,0 +1,13 @@
+.vscode
+.idea
+dist
+build
+config
+scripts
+node_modules
+public
+.babelrc
+!.*.js
+package.json
+sign_page.vue
+sign_page_controller.js

@@ -1,0 +1,51 @@
+<html>
+<header>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script type="text/javascript">
+    function toUrlAndroid(json) {
+      // 由于对象映射，所以调用cps对象等于调用Android映射的对象
+      cps.toUrlAndroid(JSON.stringify({mini_route: "测试", mini_id:'111'}));
+    }
+
+    function miniWXIOS(data = {body:'miniWXIOS',json: JSON.stringify({mini_route: "测试", mini_id:'111'})}) {
+      window.webkit.messageHandlers.miniWXIOS.postMessage(data);
+    }
+    function routeBackUrlIOS(data = {body:'routeBackUrlIOS'}) {
+      window.webkit.messageHandlers.routeBackUrlIOS.postMessage(data);
+    }
+    function getKeyIIOS(data='{"i":"9","token":"F737BE654E92409CAF67354D53B8CD8B","domain":"https://dev2.yunzmall.com"}') {
+      console.log(JSON.parse(data))
+      console.log(JSON.parse(data).token)
+      document.write(data)
+    }
+    function toGetKeyIIOS(data={ body: "toGetKeyIIOS"}) {
+      window.webkit.messageHandlers.toGetKeyIIOS.postMessage(data);
+    }
+    function getKeyIAndroid() {
+      alert(cps.getKeyIAndroid());
+      return cps.getKeyIAndroid();
+    }
+    function test() {
+      let regex3 = /\{(.+?)\}/g;
+      document.write(window.navigator.userAgent.match(regex3))
+    }
+  </script>
+</header>
+<body>
+<h2> js回调Test </h2>
+<br/>
+<br/>
+<!--<button type="button" onclick="routeBackUrlIOS()">IOS返回事件测试</button>-->
+<!--<button type="button" onclick="toQuitAndroid()">Android退出事件测试</button>-->
+
+<!--<button type="button" onclick="miniWXIOS()">IOS调起小程序</button>-->
+<!--<button type="button" onclick="toUrlAndroid()">安卓测试聚合任务中心</button>-->
+
+<button type="button" onclick="getKeyIAndroid()">获取公众号i</button>
+<button type="button" onclick="toGetKeyIIOS()">IOS获取公众号i</button>
+<button type="button" onclick="test()">test</button>
+<br/>
+<br/>
+<p id="demo">暂无回调</p>
+</body>
+</html>
